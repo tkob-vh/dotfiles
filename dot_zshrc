@@ -91,9 +91,10 @@ export LANG=en_US.UTF-8
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
+export PATH=/home/charswool/.cargo/bin:$PATH
 
 
-
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Preferred editor for local and remote sessions
  if [[ -n $SSH_CONNECTION ]]; then
@@ -120,3 +121,4 @@ export ARCHFLAGS="-arch x86_64"
 alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -alF'
+export GPG_TTY=(tty)

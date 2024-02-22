@@ -23,7 +23,7 @@ cmp.setup({
         ['<C-j>'] = cmp.mapping.select_next_item(),
         -- Use <CR>(Enter) to confirm selection
         -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        ['<CR>'] = cmp.mapping.confirm({ select = false }),
 
         -- A super tab
         -- sourc: https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings#luasnip

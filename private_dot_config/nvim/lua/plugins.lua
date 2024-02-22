@@ -37,7 +37,7 @@ return require('packer').startup(function(use)
         ---------------------------------------
         -- NOTE: PUT YOUR THIRD PLUGIN HERE --
         ---------------------------------------
-        use 'catppuccin/nvim'
+        use { 'catppuccin/nvim', as = "catppuccin" }
         use { 'neovim/nvim-lspconfig' }
         use { 'hrsh7th/nvim-cmp', config = [[require('config.nvim-cmp')]] }
         use { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' }

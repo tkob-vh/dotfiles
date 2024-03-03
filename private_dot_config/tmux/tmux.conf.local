@@ -14,7 +14,6 @@
 #   - false (default)
 tmux_conf_preserve_stock_bindings=false
 
-
 # -- session creation ----------------------------------------------------------
 
 # prompt for session name when creating a new session, possible values are:

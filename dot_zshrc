@@ -80,21 +80,21 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+export MANROFFOPT="-c"
 # export MANPATH="/usr/local/man:$MANPATH"
 export http_proxy="http://127.0.0.1:8889"
 export https_proxy="http://127.0.0.1:8889"
-
-
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export PATH=/home/charswool/.cargo/bin:$PATH
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
-export PATH=/home/charswool/.cargo/bin:$PATH
 
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Preferred editor for local and remote sessions
  if [[ -n $SSH_CONNECTION ]]; then
@@ -119,6 +119,15 @@ export ARCHFLAGS="-arch x86_64"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias l='ls -CF'
-alias la='ls -A'
+alias la='ls -AF'
 alias ll='ls -alF'
+alias cat='bat --paging=never'
+alias weather='curl wttr.in/wuhan'
+alias post="curl -F \"c=@-\" \"http://fars.ee/\""
+alias vtune-gui='/opt/intel/oneapi/vtune/latest/bin64/vtune-gui'
+
+alias diff='diff --color=auto'
+alias grep='grep --color=auto'
+alias ip='ip -color=auto'
+
 export GPG_TTY=(tty)

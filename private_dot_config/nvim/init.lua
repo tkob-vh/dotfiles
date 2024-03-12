@@ -4,4 +4,3 @@ require('plugins')
 require('colorscheme')
 require('lsp')
 require('lualine').setup()
-

@@ -16,6 +16,7 @@ require('mason-lspconfig').setup({
 -- Setup language servers.
 local lspconfig = require('lspconfig')
 lspconfig.clangd.setup {}
+lspconfig.java_language_server.setup {}
 lspconfig.rust_analyzer.setup {
   -- Server-specific settings. See `:help lspconfig-setup`
   settings = {

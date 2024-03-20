@@ -10,7 +10,7 @@ require('mason').setup({
 
 require('mason-lspconfig').setup({
     -- A list of servers to automatically install if they're not already installed
-    ensure_installed = { 'pylsp', 'cmake', 'clangd', 'lua_ls', 'rust_analyzer', 'java_language_server' },
+    ensure_installed = { 'pylsp', 'cmake', 'clangd', 'lua_ls', 'rust_analyzer', 'java_language_server', 'bashls', 'awk_ls' },
 })
 
 -- Setup language servers.
@@ -23,7 +23,9 @@ lspconfig.rust_analyzer.setup {
     ['rust-analyzer'] = {},
   },
 }
-
+lspconfig.bashls.setup{}
+lspconfig.pylsp.setup{}
+lspconfig.lua_ls.setup{}
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions

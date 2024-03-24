@@ -77,13 +77,51 @@ return require('packer').startup(function(use)
                 require('Comment').setup()
             end
         }
+        use {
+            'github/copilot.vim'
+        }
+        -- use {
+        --
+        --     "zbirenbaum/copilot.lua",
+        --     cmd = "Copilot",
+        --     event = "InsertEnter",
+        --     config = function()
+        --         require("copilot").setup({
+        --             panel = {
+        --                 enabled = false,
+        --             },
+        --             suggestion = {
+        --                 enabled = false,
+        --             },
+        --             filetypes = {
+        --                 yaml = false,
+        --                 markdown = false,
+        --                 help = false,
+        --                 gitcommit = false,
+        --                 gitrebase = false,
+        --                 hgcommit = false,
+        --                 svn = false,
+        --                 cvs = false,
+        --                 ["."] = false,
+        --             },
+        --             copilot_node_command = 'node', -- Node.js version must be > 18.x
+        --             server_opts_overrides = {},
+        --         })
+        --     end,
+        -- }
+        -- use {
+        --     "zbirenbaum/copilot-cmp",
+        --     after = {"copilot.lua"},
+        --     config = function()
+        --         require("copilot.cmp").setup()
+        --     end
+        -- }
         -- Automatically set up your configuration after cloning packer.nvim
         -- Put this at the end after all plugins
         if packer_bootstrap then
             require('packer').sync()
         end
     end)
-
 
 
 

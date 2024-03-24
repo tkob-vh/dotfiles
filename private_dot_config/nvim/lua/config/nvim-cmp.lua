@@ -27,16 +27,23 @@ cmp.setup({
 
         -- A super tab
         -- sourc: https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings#luasnip
-        ["<Tab>"] = cmp.mapping(function(fallback)
-            -- Hint: if the completion menu is visible select next one
-            if cmp.visible() then
-                cmp.select_next_item()
-            elseif has_words_before() then
-                cmp.complete()
+        -- ["<Tab>"] = cmp.mapping(function(fallback)
+        --     -- Hint: if the completion menu is visible select next one
+        --     if cmp.visible() then
+        --         cmp.select_next_item()
+        --     elseif has_words_before() then
+        --         cmp.complete()
+        --     else
+        --         fallback()
+        --     end
+        -- end, { "i", "s" }), -- i - insert mode; s - select mode
+        ["<Tab>"] = vim.schedule_wrap(function(fallback)
+            if cmp.visible() and has_words_before() then
+                cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
             else
                 fallback()
             end
-        end, { "i", "s" }), -- i - insert mode; s - select mode
+        end),
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
@@ -75,6 +82,7 @@ cmp.setup({
     { name = 'luasnip' },     -- For luasnip user
     { name = 'buffer' },      -- For buffer word completion
     { name = 'path' },        -- For path completion
+    -- { name = 'copilot'}
   })
 })
 

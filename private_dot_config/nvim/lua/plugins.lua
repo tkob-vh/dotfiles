@@ -44,7 +44,7 @@ return require('packer').startup(function(use)
         use { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' } -- buffer auto-completion
         use { 'hrsh7th/cmp-path', after = 'nvim-cmp' } -- path auto-completion
         use { 'hrsh7th/cmp-cmdline', after = 'nvim-cmp' } -- cmdline auto-completion
-        use 'L3MON4D3/LuaSnip'
+        use {'L3MON4D3/LuaSnip', run = "make install_jsregexp"}
         use 'saadparwaiz1/cmp_luasnip'
         use { 'williamboman/mason.nvim' }
         use { 'williamboman/mason-lspconfig.nvim'}

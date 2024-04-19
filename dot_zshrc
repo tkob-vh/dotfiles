@@ -143,4 +143,5 @@ export GPG_TTY=(tty)
 # Some functions
 mkd() { mkdir -p "$@" && cd "$@"; }
 
+
 eval $(thefuck --alias)

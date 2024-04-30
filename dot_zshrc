@@ -82,8 +82,8 @@ source $ZSH/oh-my-zsh.sh
 
 export MANROFFOPT="-c"
 # export MANPATH="/usr/local/man:$MANPATH"
-export http_proxy="http://127.0.0.1:8889"
-export https_proxy="http://127.0.0.1:8889"
+#export http_proxy="http://127.0.0.1:8889"
+#export https_proxy="http://127.0.0.1:8889"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export PATH=/home/charswool/.cargo/bin:$PATH
 
@@ -106,13 +106,8 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
 
-
 # Preferred editor for local and remote sessions
- if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
- else
-   export EDITOR='nvim'
- fi
+export EDITOR='nvim'
 
 
 
@@ -130,6 +125,7 @@ export ARCHFLAGS="-arch x86_64"
 alias l='ls -CF'
 alias la='ls -AF'
 alias ll='ls -alF'
+alias info="pinfo"
 alias weather='curl wttr.in/wuhan'
 alias post="curl -F \"c=@-\" \"http://fars.ee/\""
 
@@ -137,7 +133,6 @@ alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias ip='ip -color=auto'
 
-export GPG_TTY=(tty)
 
 
 # Some functions

@@ -41,6 +41,7 @@ return require('packer').startup(function(use)
     use { 'catppuccin/nvim', as = "catppuccin" }
 
     -- LSP and completion
+    use { 'onsails/lspkind.nvim' }
     use { 'neovim/nvim-lspconfig' }
     use { 'hrsh7th/nvim-cmp', config = [[require('config.nvim-cmp')]] }
     use { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' }
@@ -93,8 +94,22 @@ return require('packer').startup(function(use)
     }
 
     use {
-        'github/copilot.vim'
+        'zbirenbaum/copilot.lua',
+        config = function()
+            require("copilot").setup({
+                suggestion = {enabled = false},
+                panel = {enabled = false},
+            })
+        end
     }
+    use {
+        "zbirenbaum/copilot-cmp",
+        after = { "copilot.lua" },
+        config = function ()
+            require("copilot_cmp").setup()
+        end
+    }
+
     use {
         'Civitasv/cmake-tools.nvim', 
         config = [[require('config.cmake-tools')]] 

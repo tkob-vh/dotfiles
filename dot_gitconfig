@@ -3,3 +3,6 @@
 	email = yuxin.yan.cs@gmail.com
 [init]
 	defaultBranch = main
+
+[core]
+    quotepath = off

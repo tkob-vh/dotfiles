@@ -15,7 +15,11 @@ require('mason-lspconfig').setup({
 
 -- Setup language servers.
 local lspconfig = require('lspconfig')
-lspconfig.clangd.setup {}
+lspconfig.clangd.setup {
+    on_attach = on_attach,
+    filetypes = {"c", "cpp"},
+    root_dir = require("lspconfig").util.root_pattern(vim.fn.getcwd()),
+}
 lspconfig.java_language_server.setup {
     handlers = {
         ['client/registerCapability'] = function(err, result, ctx, config)

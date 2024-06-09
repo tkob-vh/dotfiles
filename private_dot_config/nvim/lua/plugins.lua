@@ -123,6 +123,24 @@ return require('packer').startup(function(use)
 
     }
 
+    use{
+        "MunifTanjim/nui.nvim",
+    }
+    use{
+        'rcarriga/nvim-notify'
+    }
+    use{
+        "kawre/leetcode.nvim",
+        config = function()
+            require("leetcode").setup({
+                cn = {
+                    enabled = true,
+                    translator = true,
+                    translate_problems = false,
+                }
+            })
+        end
+    }
 
     -- Put this at the end after all plugins
     if packer_bootstrap then

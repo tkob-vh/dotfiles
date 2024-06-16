@@ -1,11 +1,21 @@
 # ~/.zshrc file for zsh interactive shells.
 # see /usr/share/doc/zsh/examples/zshrc for examples
-export PATH=$HOME/bin:$HOME/.cargo/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
 
 
 
 
 export HISTFILE=$HOME/.zsh_history
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000000
+export SAVEHIST=$HISTSIZE
+
+
+setopt INC_APPEND_HISTORY
+setopt EXTENDED_HISTORY
+
+
+export WORDCHARS="${WORDCHARS//\/}"
 
 
 
@@ -81,6 +91,7 @@ alias ip='ip -color=auto'
 
 # Some functions
 mkd() { mkdir -p "$@" && cd "$@"; }
+-() { cd -; }
 batdiff() {
     git diff --name-only --relative --diff-filter=d | xargs bat --diff
 }
@@ -101,5 +112,3 @@ eval "$(starship init zsh)"
 source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source <(fzf --zsh)
-
-fpath=($HOME/.zsh/zsh-completions/src/ $fpath)

@@ -63,7 +63,7 @@ cmp.setup({
 
     -- Set source precedence
     sources = cmp.config.sources({
-        { name = 'copilot' },     -- For copilot
+        -- { name = 'copilot' },     -- For copilot
         { name = 'nvim_lsp' },    -- For nvim-lsp
         { name = 'luasnip' },     -- For luasnip user
         { name = 'buffer' },      -- For buffer word completion

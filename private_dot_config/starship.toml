@@ -21,6 +21,7 @@ $nim\
 $rust\
 $scala\
 [](fg:#86BBD8 bg:#06969A)\
+$conda\
 $docker_context\
 [](fg:#06969A bg:#33658A)\
 $cmd_duration\
@@ -87,6 +88,10 @@ format = '[ $symbol ($version) ]($style)'
 symbol = " "
 style = "bg:#06969A"
 format = '[ $symbol $context ]($style)'
+
+[conda]
+stype = "bg:#06969A"
+format = '[$symbol$environment]($style)'
 
 [elixir]
 symbol = " "

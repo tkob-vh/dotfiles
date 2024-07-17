@@ -1,0 +1,72 @@
+{
+    "layer": "top",
+        "modules-left": ["custom/arch", "hyprland/workspaces"],
+        "modules-center": ["clock"],
+        "modules-right": ["wlr/taskbar", "wireplumber", "network", "battery"],
+        "custom/arch": {
+            "format": "  ",
+            "tooltip": false,
+            "on-click": "rofi -show drun"
+        },
+        "hyprland/workspaces": {
+            "format": "{name}",
+            "format": "{icon}",
+            "tooltip": false,
+            "all-outputs": true,
+            "format-icons": {
+                "active": "",
+                "default": ""
+            }
+        },
+        "wlr/taskbar": {
+            "format": "{icon}",
+            "icon-size": 14,
+            "icon-theme": "Numix-Circle",
+            "tooltip-format": "{title}",
+            "on-click": "activate",
+            "on-click-middle": "close",
+            "ignore-list": [
+                "kitty"
+            ],
+            "app_ids-mapping": {
+                "firefoxdeveloperedition": "firefox-developer-edition"
+            },
+            "rewrite": {
+                "Firefox Web Browser": "Firefox",
+                "Foot Server": "Terminal"
+            }
+        },
+        "clock": {
+            "format": "<span color='#b4befe'> </span>{:%H:%M}",
+        },
+        "bluetooth": {
+            "format": "<span color='#b4befe'></span> {status}",
+            "format-disabled": "", // an empty format will hide the module
+            "format-connected": "<span color='#b4befe'></span> {num_connections}",
+            "tooltip-format": "{device_enumerate}",
+            "tooltip-format-enumerate-connected": "{device_alias}   {device_address}"
+        },
+        "wireplumber": {
+            "format": "{volume}% {icon}",
+            "format-muted": "󰝟",
+            "on-click": "helvum",
+            "format-icons": ["", "", ""]
+        },
+        "network": {
+            "interface": "wlp0s20f3",
+            "format": "{ifname}",
+            "format-wifi": "{signalStrength}% ",
+            "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+            "format-disconnected": "", //An empty format will hide the module.
+            "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+            "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+            "tooltip-format-ethernet": "{ifname} ",
+            "tooltip-format-disconnected": "Disconnected",
+            "max-length": 50
+        },
+        "battery": {
+            "format": "{capacity}% {icon}",
+            "format-icons": ["", "", "", "", ""]
+        },
+
+}

@@ -1,0 +1,21 @@
+[Unit]
+Description=Rclone Service
+Wants=network-online.target
+After=network-online.target
+AssertPathIsDirectory=/home/charswool/webdav
+
+[Service]
+User=charswool
+Group=charswool
+ExecStart= \
+    /usr/bin/rclone mount \
+                  remote_storage:/ \
+                  /home/charswool/webdav \
+                  --config=/home/charswool/.config/rclone/rclone.conf \
+                  --copy-links
+ExecStop=/usr/bin/fusermount3 -u /home/charswool/webdav
+Restart=on-failure
+
+
+[Install]
+WantedBy=default.target

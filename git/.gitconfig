@@ -3,6 +3,15 @@
 	email = yuxin.yan.cs@gmail.com
 [init]
 	defaultBranch = main
-
 [core]
     quotepath = off
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
+
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default

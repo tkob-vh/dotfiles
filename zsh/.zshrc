@@ -120,3 +120,9 @@ if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
     exec Hyprland
 fi
 
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/charswool/.dart-cli-completion/zsh-config.zsh ]] && . /home/charswool/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+

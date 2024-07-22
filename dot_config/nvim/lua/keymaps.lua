@@ -38,3 +38,13 @@ vim.keymap.set('n', '<leader>fq', ":Telescope quickfix<CR>", opts)
 vim.keymap.set('v', '<', '<gv', opts)
 vim.keymap.set('v', '>', '>gv', opts)
 
+
+-----------------
+-- Insert mode --
+-----------------
+
+-- readline actions in nvim. <C-w> and <C-u> just behaves out-of-box.
+vim.keymap.set('i', '<C-a>', '<C-o>^')
+vim.keymap.set('i', '<C-e>', '<C-o>$')
+vim.keymap.set('i', '<C-k>', '<C-o>C')
+

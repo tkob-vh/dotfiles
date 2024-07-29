@@ -45,6 +45,9 @@ export FZF_BASE=$HOME/.nix-profile/bin/fzf
 # Preferred editor for local and remote sessions
 bindkey -e
 export EDITOR='nvim'
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^Xe' edit-command-line
 
 
 

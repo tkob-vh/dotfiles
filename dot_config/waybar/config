@@ -6,7 +6,7 @@
         "custom/arch": {
             "format": "  ",
             "tooltip": false,
-            "on-click": "rofi -show drun"
+            "on-click": ". $HOME/.config/rofi/applets/bin/powermenu.sh"
         },
         "hyprland/workspaces": {
             "format": "{name}",
@@ -49,7 +49,7 @@
         "wireplumber": {
             "format": "{volume}% {icon}",
             "format-muted": "󰝟",
-            "on-click": "helvum",
+            "on-click": ". $HOME/.config/rofi/applets/bin/volume.sh",
             "format-icons": ["", "", ""]
         },
         "network": {
@@ -66,7 +66,8 @@
         },
         "battery": {
             "format": "{capacity}% {icon}",
-            "format-icons": ["", "", "", "", ""]
+            "format-icons": ["", "", "", "", ""],
+            "on-click": ". $HOME/.config/rofi/applets/bin/battery.sh"
         },
 
 }

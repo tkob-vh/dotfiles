@@ -1,22 +1,23 @@
 {
-    "layer": "top",
+    "layer": "top", // Waybar at top layer
+        "position": "top", // Waybar position (top|bottom|left|right)
+                           // "width": 1280, // Waybar width
+                           // Choose the order of the modules
         "modules-left": ["custom/arch", "hyprland/workspaces"],
-        "modules-center": ["clock"],
-        "modules-right": ["wlr/taskbar", "wireplumber", "network", "battery"],
+        "modules-center": [],
+        "modules-right": ["wlr/taskbar", "wireplumber", "backlight", "battery", "clock"],
         "custom/arch": {
             "format": "  ",
             "tooltip": false,
             "on-click": ". $HOME/.config/rofi/applets/bin/powermenu.sh"
         },
         "hyprland/workspaces": {
-            "format": "{name}",
-            "format": "{icon}",
-            "tooltip": false,
-            "all-outputs": true,
+            "disable-scroll": true,
+            "sort-by-name": true,
+            "format": " {icon} ",
             "format-icons": {
-                "active": "",
-                "default": ""
-            }
+                "default": "",
+            },
         },
         "wlr/taskbar": {
             "format": "{icon}",
@@ -37,37 +38,35 @@
             }
         },
         "clock": {
-            "format": "<span color='#b4befe'> </span>{:%H:%M}",
+            "timezone": "Asia/Shanghai",
+            "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+            "format-alt": " {:%d/%m/%Y}",
+            "format": " {:%H:%M}"
         },
-        "bluetooth": {
-            "format": "<span color='#b4befe'></span> {status}",
-            "format-disabled": "", // an empty format will hide the module
-            "format-connected": "<span color='#b4befe'></span> {num_connections}",
-            "tooltip-format": "{device_enumerate}",
-            "tooltip-format-enumerate-connected": "{device_alias}   {device_address}"
-        },
-        "wireplumber": {
-            "format": "{volume}% {icon}",
-            "format-muted": "󰝟",
-            "on-click": ". $HOME/.config/rofi/applets/bin/volume.sh",
-            "format-icons": ["", "", ""]
-        },
-        "network": {
-            "interface": "wlp0s20f3",
-            "format": "{ifname}",
-            "format-wifi": "{signalStrength}% ",
-            "format-ethernet": "{ipaddr}/{cidr} 󰊗",
-            "format-disconnected": "", //An empty format will hide the module.
-            "tooltip-format": "{ifname} via {gwaddr} 󰊗",
-            "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-            "tooltip-format-ethernet": "{ifname} ",
-            "tooltip-format-disconnected": "Disconnected",
-            "max-length": 50
+        "backlight": {
+            "device": "light",
+            "format": "{icon}",
+            "format-icons": ["", "", "", "", "", "", "", "", ""]
         },
         "battery": {
-            "format": "{capacity}% {icon}",
-            "format-icons": ["", "", "", "", ""],
-            "on-click": ". $HOME/.config/rofi/applets/bin/battery.sh"
+            "states": {
+                "warning": 30,
+                "critical": 15
+            },
+            "format": "{icon}",
+            "format-charging": "",
+            "format-plugged": "",
+            "format-alt": "{icon}",
+            "on-click": ". $HOME/.config/rofi/applets/bin/battery.sh",
+            "format-icons": ["", "",  "", "", "", "", "", "", "", "", "", ""]
         },
-
+        "wireplumber": {
+            // "scroll-step": 1, // %, can be a float
+            "format": "{icon} {volume}%",
+            "format-muted": "",
+            "format-icons": {
+                "default": ["", "", " "]
+            },
+            "on-click": ". $HOME/.config/rofi/applets/bin/volume.sh"
+        }
 }

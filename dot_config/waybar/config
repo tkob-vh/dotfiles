@@ -13,7 +13,6 @@
         },
         "hyprland/workspaces": {
             "disable-scroll": true,
-            "sort-by-name": true,
             "format": " {icon} ",
             "format-icons": {
                 "default": "",
@@ -46,7 +45,8 @@
         "backlight": {
             "device": "light",
             "format": "{icon}",
-            "format-icons": ["", "", "", "", "", "", "", "", ""]
+            "format-icons": ["", "", "", "", "", "", "", "", ""],
+            "on-click": ". $HOME/.config/rofi/applets/bin/brightness.sh"
         },
         "battery": {
             "states": {

@@ -78,10 +78,19 @@
 
 #taskbar {
   color: @maroon;
-  border-radius: 1rem 0px 0px 1rem;
+  border-radius: 1rem;
+  margin-right: 5px;
+  border-color: @surface1;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+#taskbar.empty {
+    background: none;
 }
 #wireplumber {
-  color: @purple;
+  color: @lavender;
+  border-radius: 1rem 0px 0px 1rem;
 }
 
 #custom-music {

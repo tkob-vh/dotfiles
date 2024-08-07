@@ -127,7 +127,12 @@ return require('packer').startup(function(use)
         "MunifTanjim/nui.nvim",
     }
     use{
-        'rcarriga/nvim-notify'
+        'rcarriga/nvim-notify',
+        config = function()
+            require("notify").setup({
+                background_colour = "#000000",
+            })
+        end
     }
     use{
         "kawre/leetcode.nvim",

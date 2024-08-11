@@ -81,8 +81,12 @@
   border-radius: 1rem;
   margin-right: 5px;
   border-color: @surface1;
+}
+
+#taskbar button:hover {
   box-shadow: none;
   text-shadow: none;
+  background: none;
 }
 
 #taskbar.empty {

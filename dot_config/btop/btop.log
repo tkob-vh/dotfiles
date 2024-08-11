@@ -1,0 +1,23 @@
+
+2024/08/11 (15:55:47) | ===> btop++ v.1.2.13
+2024/08/11 (15:55:47) | WARNING: Invalid box name(s) in shown_boxes!
+2024/08/11 (15:55:47) | WARNING: No good candidate for cpu sensor found, using random from all found sensors.
+2024/08/11 (15:55:47) | ERROR: Exception in runner thread -> Cpu:: -> key not found
+
+2024/08/11 (15:55:51) | ===> btop++ v.1.2.13
+2024/08/11 (15:55:51) | WARNING: No good candidate for cpu sensor found, using random from all found sensors.
+2024/08/11 (15:55:51) | ERROR: Exception in runner thread -> Cpu:: -> key not found
+
+2024/08/11 (16:11:21) | ===> btop++ v.1.2.13
+2024/08/11 (16:11:21) | WARNING: No good candidate for cpu sensor found, using random from all found sensors.
+2024/08/11 (16:11:21) | ERROR: Exception in runner thread -> Cpu:: -> key not found
+
+2024/08/11 (16:11:55) | ===> btop++ v.1.2.13
+2024/08/11 (16:11:55) | WARNING: No good candidate for cpu sensor found, using random from all found sensors.
+2024/08/11 (16:11:55) | ERROR: Exception in runner thread -> Cpu:: -> key not found
+
+2024/08/11 (16:12:17) | ===> btop++ v.1.2.13
+2024/08/11 (16:12:17) | WARNING: No good candidate for cpu sensor found, using random from all found sensors.
+
+2024/08/11 (16:12:30) | ===> btop++ v.1.2.13
+2024/08/11 (16:12:30) | WARNING: No good candidate for cpu sensor found, using random from all found sensors.

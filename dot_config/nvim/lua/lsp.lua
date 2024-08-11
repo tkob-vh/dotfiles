@@ -10,7 +10,7 @@ require('mason').setup({
 
 require('mason-lspconfig').setup({
     -- A list of servers to automatically install if they're not already installed
-    ensure_installed = { 'pylsp', 'cmake', 'clangd', 'lua_ls', 'rust_analyzer', 'bashls', 'awk_ls' },
+    ensure_installed = {'rust_analyzer'},
 })
 
 -- Setup language servers.

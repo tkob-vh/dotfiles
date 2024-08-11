@@ -1,3 +1,6 @@
 private_data/
 private_dot_config/nvim/plugin/
 private_dot_config/tmux/plugins/
+*.log
+*.data
+*.dat

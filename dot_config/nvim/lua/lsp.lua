@@ -18,6 +18,9 @@ local lspconfig = require('lspconfig')
 lspconfig.clangd.setup {
     on_attach = on_attach,
     filetypes = {"c", "cpp"},
+    init_options = {
+        fallbackFlags = {'--std=c++20'}
+    },
     root_dir = require("lspconfig").util.root_pattern(vim.fn.getcwd()),
 }
 -- lspconfig.java_language_server.setup {

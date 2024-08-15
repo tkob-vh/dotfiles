@@ -13,10 +13,17 @@ export SAVEHIST=$HISTSIZE
 setopt INC_APPEND_HISTORY
 setopt EXTENDED_HISTORY
 
-
+# Modify word seperator.
 export WORDCHARS="${WORDCHARS//\/}"
 
+autoload -Uz +X compinit && compinit
 
+## case insensitive path-completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' menu select
+
+fpath=(~/.zsh $fpath)
+source $HOME/.zsh/alias.zsh
 
 export MANROFFOPT="-c"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
@@ -52,44 +59,6 @@ bindkey '^Xe' edit-command-line
 
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
-
-
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-
-
-alias l='lsd -F'
-alias ls='lsd -F'
-alias la='lsd -AF'
-alias ll='lsd -alF'
-
-alias ~='cd ~'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias .3='cd ../../..'
-alias .4='cd ../../../..'
-alias .5='cd ../../../../..'
-
-alias vi='nvim'
-alias _vi='sudoedit'
-alias leet='vi leetcode.nvim'
-alias weather='curl wttr.in/wuhan'
-alias post="curl -F \"c=@-\" \"http://fars.ee/\""
-alias path='echo -e ${PATH//:/\\n}'
-# alias fzf='fzf --preview "bat --color=always --style=header,grid --line-range=:50 {}"'
-alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
-alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
-
-alias info="pinfo"
-alias diff='diff --color=auto'
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias ip='ip -color=auto'
-
 
 
 # Some functions

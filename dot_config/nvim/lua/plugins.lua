@@ -147,6 +147,15 @@ return require('packer').startup(function(use)
         end
     }
 
+    use{
+        "lukas-reineke/virt-column.nvim",
+        config = function()
+            require("virt-column").setup({
+                char = "│"
+            })
+        end
+    }
+
     -- Put this at the end after all plugins
     if packer_bootstrap then
         require('packer').sync()

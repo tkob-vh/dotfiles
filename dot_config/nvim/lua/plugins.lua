@@ -136,13 +136,14 @@ return require('packer').startup(function(use)
     }
     use{
         "kawre/leetcode.nvim",
+        -- login method: inspect(f12) -> network -> graphql -> header -> cookie
         config = function()
             require("leetcode").setup({
-                cn = {
-                    enabled = true,
-                    translator = true,
-                    translate_problems = false,
-                }
+                -- cn = {
+                --     enabled = true,
+                --     translator = true,
+                --     translate_problems = false,
+                -- }
             })
         end
     }
@@ -156,7 +157,7 @@ return require('packer').startup(function(use)
         end
     }
 
-    -- Put this at the end after all plugins
+    -- put this at the end after all plugins
     if packer_bootstrap then
         require('packer').sync()
     end

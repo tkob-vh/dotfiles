@@ -18,15 +18,15 @@ local lspconfig = require('lspconfig')
 lspconfig.clangd.setup {
     on_attach = on_attach,
     filetypes = {"c", "cpp", "cuda", "hpp"},
-    cmd = {
-        "clangd",
-        "--background-index",
-        "--clang-tidy",
-        "--header-insertion=iwyu",
-        "--completion-style=detailed",
-        "--function-arg-placeholders",
-        "--fallback-style=webkit",
-    },
+    -- cmd = {
+    --     "clangd",
+    --     "--background-index",
+    --     "--clang-tidy",
+    --     "--header-insertion=iwyu",
+    --     "--completion-style=detailed",
+    --     "--function-arg-placeholders",
+    --     "--fallback-style=webkit",
+    -- },
     init_options = {
         fallbackFlags = {'--std=c++23'},
     },

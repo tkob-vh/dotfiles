@@ -90,7 +90,7 @@ style = "bg:#06969A"
 format = '[ $symbol $context ]($style)'
 
 [conda]
-stype = "bg:#06969A"
+style = "bg:#06969A"
 format = '[$symbol$environment]($style)'
 
 [elixir]

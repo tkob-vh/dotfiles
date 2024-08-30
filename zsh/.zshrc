@@ -85,6 +85,9 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source <(fzf --zsh)
 
+# miniconda
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
 
 # Hyprland
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then

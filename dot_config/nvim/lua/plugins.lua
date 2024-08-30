@@ -156,6 +156,12 @@ return require('packer').startup(function(use)
             })
         end
     }
+    use{
+        "f-person/git-blame.nvim",
+        config = function()
+            require("gitblame").setup()
+        end
+    }
 
     -- put this at the end after all plugins
     if packer_bootstrap then

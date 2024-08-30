@@ -28,7 +28,7 @@ lspconfig.clangd.setup {
     --     "--fallback-style=webkit",
     -- },
     init_options = {
-        fallbackFlags = {'--std=c++23'},
+        fallbackFlags = {'--std=c++20'},
     },
     root_dir = require("lspconfig").util.root_pattern(vim.fn.getcwd()),
 }

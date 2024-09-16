@@ -3,17 +3,17 @@ My dotfiles which use [stow](https://www.gnu.org/software/stow/) to manage.
 
 ## Terminal
 
-![Screenshot](assets/)
+![Screenshot](assets/overall_screenshot.png)
 
 ### [kitty](https://sw.kovidgoyal.net/kitty/)
-**font**: FiraCode Nerd Font
-**hide_window_decorations**: yes
-**Color Theme**: [Catppuccin](https://catppuccin.com/)
-
-Auto launch tmux on startup.
+* **font**: FiraCode Nerd Font
+* **Color Theme**: [Catppuccin](https://github.com/catppuccin/kitty)
+* Auto launch `tmux` on startup.
 
 ### [Starship](https://starship.rs/)
 Use starship as the terminal prompt.
+![starship](assets/starship.png)
+
 
 ### zsh
 
@@ -23,7 +23,7 @@ Use starship as the terminal prompt.
 
 ### neovim
 #### Colorscheme
-Catppuccin
+[Catppuccin](https://github.com/catppuccin/nvim)
 
 #### keymaps
 
@@ -69,7 +69,41 @@ vim.keymap.set('i', '<C-a>', '<C-o>^')
 vim.keymap.set('i', '<C-e>', '<C-o>$')
 vim.keymap.set('i', '<C-k>', '<C-o>C')
 
+-----------------
+-- LSP keymaps --
+-----------------
+
+-- Global mappings.
+-- See `:help vim.diagnostic.*` for documentation on any of the below functions
+vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
+
+
+-- Buffer local mappings.
+-- See `:help vim.lsp.*` for documentation on any of the below functions
+local opts = { buffer = ev.buf }
+vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
+vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
+vim.keymap.set('n', '<space>wl', function()
+print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+end, opts)
+vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
+vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
+vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
+vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+vim.keymap.set('n', '<space>f', function()
+vim.lsp.buf.format { async = true }
+end, opts)
 ```
+For more keymaps(including lsp related), type `:map` in neovim.
+
 #### Plugins
 * neovim/nvim-lspconfig
 * williamboman/mason.nvim
@@ -86,11 +120,11 @@ vim.keymap.set('i', '<C-k>', '<C-o>C')
 ### tmux
 
 #### Theme
-catppuccin/tmux
+[Catppuccin](https://github.com/catppuccin/tmux)
 
 #### Keybinds
 * **C^h,j,k,l** Move between different panels.
-* **C^b + C^g** Invoke the navi. 
+* **C^b + C^g** Invoke the navi.
 
 #### Plugins
 * tmux-plugins/tpm
@@ -121,4 +155,4 @@ Terminal builtin file manager.
 Replacement of `ls`
 
 ### bat
-Replacement of 'cat'
+Replacement of `cat`

@@ -101,7 +101,6 @@ function sterile() {
 
 export PROMPT_COMMAND="sterile"
 
-#eval $(thefuck --alias)
 eval "$(starship init zsh)"
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

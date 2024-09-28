@@ -1,6 +1,7 @@
 [user]
-	name = yyx
+	name = Yuxin Yan
 	email = yuxin.yan.cs@gmail.com
+	signingkey = B75F1501A372B52E472DDBF2CEEFB737AE622F9E
 [init]
 	defaultBranch = main
 [core]
@@ -21,3 +22,5 @@
     conflictstyle = diff3
 [diff]
     colorMoved = default
+[commit]
+	gpgsign = true

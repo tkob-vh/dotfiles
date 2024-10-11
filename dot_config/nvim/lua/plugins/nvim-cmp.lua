@@ -34,22 +34,35 @@ return {
               if cmp.visible() and cmp.get_active_entry() then
                 cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
               else
-                fallback()
+                fallback() -- 换行
               end
             end,
-            s = cmp.mapping.confirm({ select = true }),
-            c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+            s = cmp.mapping.confirm({ select = false }),
+            c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false }),
           }),
-          ["<Tab>"] = vim.schedule_wrap(function(fallback)
-            if cmp.visible() and has_words_before() then
-              cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+          ["<Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_next_item({ behavior = cmp.SelectBehavior.Select }) -- 高亮下一个选项
+            elseif luasnip.expand_or_jumpable() then
+              luasnip.expand_or_jump() -- 跳转到下一个占位符
+            elseif has_words_before() then
+              cmp.complete() -- 如果没有补全框，触发补全
             else
-              fallback()
+              fallback() -- 默认行为
             end
-          end),
+          end, { "i", "s" }),
+          -- ["<Tab>"] = cmp.mapping(function(fallback)
+          --   if cmp.visible() then
+          --     cmp.select_next_item({ behavior = cmp.SelectBehavior.select }) -- 高亮下一个选项
+          --   elseif has_words_before() then
+          --     cmp.complete() -- 如果没有补全框，触发补全
+          --   else
+          --     fallback() -- 默认行为
+          --   end
+          -- end, { "i", "s" }),
           ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
-              cmp.select_prev_item()
+              cmp.select_prev_item() -- 高亮上一个选项
             elseif luasnip.jumpable(-1) then
               luasnip.jump(-1)
             else
@@ -74,6 +87,8 @@ return {
           { name = "buffer" },
           { name = "path" },
         }),
+
+        preselect = cmp.PreselectMode.None,
       })
     end,
   },

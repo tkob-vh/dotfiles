@@ -2,12 +2,34 @@
 # see /usr/share/doc/zsh/examples/zshrc for examples
 
 
-
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_STATE_HOME=$HOME/.local/state
+export XDG_CACHE_HOME=$HOME/.cache
 
 export HISTFILE=$HOME/.zsh_history
 export HISTFILESIZE=1000000000
 export HISTSIZE=1000000000
 export SAVEHIST=$HISTSIZE
+
+export ANDROID_USER_HOME="$XDG_DATA_HOME"/android
+
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
+
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+
+export GOPATH="$XDG_DATA_HOME"/go
+
+export LESSHISTFILE="$XDG_STATE_HOME"/less/history
+
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
+
+export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+
+
 
 
 setopt INC_APPEND_HISTORY

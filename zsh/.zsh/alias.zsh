@@ -26,3 +26,5 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias ip='ip -color=auto'
 
+alias adb='HOME="$XDG_DATA_HOME"/android adb'
+alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME"/yarn/config'

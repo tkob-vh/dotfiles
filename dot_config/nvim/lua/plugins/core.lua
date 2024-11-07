@@ -46,6 +46,7 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
       "jose-elias-alvarez/typescript.nvim",
+      "simrat39/rust-tools.nvim",
       init = function()
         require("lazyvim.util").lsp.on_attach(function(_, buffer)
         -- stylua: ignore
@@ -56,7 +57,6 @@ return {
     },
     opts = {
       servers = {
-        tsserver = {},
         clangd = {
           keys = {
             { "<leader>ch", "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch Source/Header (C/C++)" },
@@ -85,11 +85,38 @@ return {
             "--completion-style=detailed",
             "--function-arg-placeholders",
             "--fallback-style=llvm",
+            "-std=c++2c",
           },
           init_options = {
             usePlaceholders = true,
             completeUnimported = true,
             clangdFileStatus = true,
+          },
+        },
+      },
+      rust_analyzer = {
+        mason = true,
+        -- cmd = { vim.fn.expand("~/.local/share/cargo/bin/rust-analyzer") },
+        settings = {
+          ["rust-analyzer"] = {
+            -- imports = {
+            --   granularity = {
+            --     group = "module",
+            --   },
+            --   prefix = "self",
+            -- },
+            -- cargo = {
+            --   buildScripts = {
+            --     enable = true,
+            --   },
+            -- },
+            -- procMacro = {
+            --   enable = true,
+            -- },
+            diagnostics = {
+              enable = false,
+              disabled = { "unlinked-file" },
+            },
           },
         },
       },
@@ -102,6 +129,10 @@ return {
           local clangd_ext_opts = LazyVim.opts("clangd_extensions.nvim")
           require("clangd_extensions").setup(vim.tbl_deep_extend("force", clangd_ext_opts or {}, { server = opts }))
           return false
+        end,
+        rust_analyzer = function(_, opts)
+          require("rust-tools").setup({ server = opts })
+          return true
         end,
       },
     },

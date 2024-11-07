@@ -1,0 +1,51 @@
+// ~/.config/zed/settings.json
+{
+  "ssh_connections": [
+    {
+      "host": "hepnode",
+      "projects": [
+        {
+          "paths": [
+            "~/dianfeng-qibianxing1"
+          ]
+        }
+      ]
+    }
+  ],
+  "assistant": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4"
+    },
+    "version": "2"
+  },
+  "theme": "Gruvbox Dark",
+  "tab_size": 4,
+  "preferred_line_length": 80,
+  "soft_wrap": "none",
+
+  "buffer_font_size": 18,
+  "buffer_font_family": "FiraCode Nerd Font",
+
+  "autosave": "on_focus_change",
+  "format_on_save": "off",
+  "vim_mode": true,
+  "projects_online_by_default": true,
+  "terminal": {
+    "font_family": "FiraCode Nerd Font Mono",
+    "blinking": "off"
+  },
+  "git": {
+    "git_gutter": "tracked_files",
+    "inline_blame": {
+      "enabled": true
+    }
+  },
+  "languages": {
+    "C": {
+      "format_on_save": "language_server",
+      "preferred_line_length": 80,
+      "soft_wrap": "preferred_line_length"
+    }
+  }
+}

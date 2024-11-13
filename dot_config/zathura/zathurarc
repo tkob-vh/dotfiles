@@ -1,1 +1,2 @@
 include catppuccin-latte
+set selection-clipboard clipboard

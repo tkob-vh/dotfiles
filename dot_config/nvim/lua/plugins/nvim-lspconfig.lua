@@ -41,7 +41,6 @@ return {
           "--completion-style=detailed",
           "--function-arg-placeholders",
           "--fallback-style=llvm",
-          "-std=c++2c",
         },
         init_options = {
           usePlaceholders = true,
@@ -52,7 +51,6 @@ return {
     },
     rust_analyzer = {
       mason = true,
-      -- cmd = { vim.fn.expand("~/.local/share/cargo/bin/rust-analyzer") },
       settings = {
         ["rust-analyzer"] = {
           -- imports = {

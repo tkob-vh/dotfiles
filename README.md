@@ -44,22 +44,9 @@ vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>', opts)
 vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', opts)
 
 
--- plugin shortcuts
-vim.keymap.set('n', '<leader>ff', ":Telescope find_files<CR>", opts)
-vim.keymap.set('n', '<leader>fg', ":Telescope live_grep<CR>", opts)
-vim.keymap.set('n', '<leader>fb', ":Telescope buffers<CR>", opts)
-vim.keymap.set('n', '<leader>fh', ":Telescope help_tags<CR>", opts)
-vim.keymap.set('n', '<leader>fq', ":Telescope quickfix<CR>", opts)
-
 -----------------
 -- Visual mode --
 -----------------
-
--- Hint: start visual mode with the same area as the previous area and the same mode
-vim.keymap.set('v', '<', '<gv', opts)
-vim.keymap.set('v', '>', '>gv', opts)
-
-
 -----------------
 -- Insert mode --
 -----------------
@@ -110,7 +97,6 @@ For more keymaps(including lsp related), type `:map` in neovim.
 * nvim-lualine/lualine.nvim
 * iamcco/markdown-preview.nvim
 * nvim-treesitter/nvim-treesitter
-* nvim-telescope/telescope.nvim
 * windwp/nvim-autopairs
 * numToStr/Comment.nvim
 * rcarriga/nvim-notify

@@ -49,38 +49,9 @@ return {
         },
       },
     },
-    rust_analyzer = {
-      mason = true,
-      settings = {
-        ["rust-analyzer"] = {
-          -- imports = {
-          --   granularity = {
-          --     group = "module",
-          --   },
-          --   prefix = "self",
-          -- },
-          -- cargo = {
-          --   buildScripts = {
-          --     enable = true,
-          --   },
-          -- },
-          -- procMacro = {
-          --   enable = true,
-          -- },
-          diagnostics = {
-            enable = false,
-            disabled = { "unlinked-file" },
-          },
-        },
-      },
-    },
     setup = {
       tsserver = function(_, opts)
         require("typescript").setup({ server = opts })
-        return true
-      end,
-      rust_analyzer = function(_, opts)
-        require("rust-tools").setup({ server = opts })
         return true
       end,
     },

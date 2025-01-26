@@ -13,24 +13,24 @@ return {
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
     "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-    {
-      "zbirenbaum/copilot.lua",
-      config = function()
-        require("copilot").setup({
-          suggestion = { enabled = true },
-          panel = { enabled = true },
-          copilot_node_command = "node", -- Node.js 的路径
-          server_opts_overrides = {
-            trace = "verbose", -- 打开调试日志
-            settings = {
-              advanced = {
-                inlineSuggestCount = 3, -- 自定义建议数量
-              },
-            },
-          },
-        })
-      end,
-    },
+    -- {
+    --   -- "zbirenbaum/copilot.lua",
+    --   config = function()
+    --     require("copilot").setup({
+    --       suggestion = { enabled = true },
+    --       panel = { enabled = true },
+    --       copilot_node_command = "node", -- Node.js 的路径
+    --       server_opts_overrides = {
+    --         trace = "verbose", -- 打开调试日志
+    --         settings = {
+    --           advanced = {
+    --             inlineSuggestCount = 3, -- 自定义建议数量
+    --           },
+    --         },
+    --       },
+    --     })
+    --   end,
+    -- },
     {
       "HakonHarnes/img-clip.nvim",
       event = "VeryLazy",

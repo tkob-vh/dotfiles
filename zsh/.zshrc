@@ -1,6 +1,7 @@
 # ~/.zshrc file for zsh interactive shells.
 # see /usr/share/doc/zsh/examples/zshrc for examples
 
+export PATH=$HOME/.local/bin:$HOME/.local/share/cargo/bin:$PATH
 
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CONFIG_HOME=$HOME/.config
@@ -15,6 +16,8 @@ export SAVEHIST=$HISTSIZE
 export ANDROID_USER_HOME="$XDG_DATA_HOME"/android
 
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export RUSTUP_DIST_SERVER="https://mirror.iscas.ac.cn/rustup"
+export RUSTUP_UPDATE_ROOT="https://mirror.iscas.ac.cn/rustup/rustup"
 
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
 
@@ -100,6 +103,10 @@ _fzf_comprun(){
     esac
 }
 
+check_ip() {
+  bash <(curl -L -s check.unlock.media)
+}
+
 topcmds() {
     history | \
         awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | \
@@ -124,6 +131,7 @@ function sterile() {
 export PROMPT_COMMAND="sterile"
 
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source <(fzf --zsh)
@@ -146,3 +154,4 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+

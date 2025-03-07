@@ -2,11 +2,14 @@
 	name = Yuxin Yan
 	email = yuxin.yan.cs@gmail.com
 	signingkey = B75F1501A372B52E472DDBF2CEEFB737AE622F9E
+
 [init]
 	defaultBranch = main
+
 [core]
     quotepath = off
     pager = delta
+
 [interactive]
     diffFilter = delta --color-only
 [delta]
@@ -20,14 +23,26 @@
 
 [merge]
     conflictstyle = diff3
+
 [diff]
     colorMoved = default
+
 [commit]
 	gpgsign = true
+
 [pull]
 	rebase = true
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
+[branch]
+	sort = -committerdate
+
+[tag]
+	sort = version:refname
+[push]
+	followTags = true

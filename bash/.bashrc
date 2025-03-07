@@ -17,3 +17,5 @@ alias ll='ls -alF'
 alias ..='cd ..'
 alias ...='cd ../..'
 
+export RUSTUP_DIST_SERVER="https://mirror.iscas.ac.cn/rustup"
+export RUSTUP_UPDATE_ROOT="https://mirror.iscas.ac.cn/rustup/rustup"

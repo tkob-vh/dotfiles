@@ -1,6 +1,13 @@
 # dotfiles
 My dotfiles which use [stow](https://www.gnu.org/software/stow/) to manage.
 
+## Overview
+* fcitx5 + espanso
+* ocrmypdf + umi-ocr
+* zbar
+* zathura + foliate
+
+
 ## Terminal
 
 ![Screenshot](assets/overall_screenshot.png)

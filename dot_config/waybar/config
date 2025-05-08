@@ -5,7 +5,7 @@
                            // Choose the order of the modules
         "modules-left": ["custom/arch", "hyprland/workspaces"],
         "modules-center": [],
-        "modules-right": ["wlr/taskbar", "wireplumber", "backlight", "battery", "clock"],
+        "modules-right": ["wlr/taskbar", "pulseaudio", "backlight", "battery", "clock"],
         "custom/arch": {
             "format": "  ",
             "tooltip": false,
@@ -61,13 +61,24 @@
             "on-click": ". $HOME/.config/rofi/applets/bin/battery.sh",
             "format-icons": ["", "",  "", "", "", "", "", "", "", "", "", ""]
         },
-        "wireplumber": {
+        "pulseaudio": {
             // "scroll-step": 1, // %, can be a float
-            "format": "{icon} {volume}%",
-            "format-muted": "",
+            "format": "{volume}% {icon}",
+            "format-bluetooth": "{volume}% {icon}",
+            "format-muted": "",
             "format-icons": {
-                "default": ["", "", " "]
+              "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
+              "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
+              "headphone": "",
+              "hands-free": "",
+              "headset": "",
+              "phone": "",
+              "phone-muted": "",
+              "portable": "",
+              "car": "",
+              "default": ["", ""]
             },
+            "scroll-step": 1,
             "on-click": ". $HOME/.config/rofi/applets/bin/volume.sh"
         }
 }
